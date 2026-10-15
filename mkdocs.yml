@@ -1,0 +1,41 @@
+site_name: mktsim
+site_description: Realistic intraday share-market simulators driven by simulated buy/sell order flow.
+site_author: ASH-SuperUser
+repo_url: https://github.com/ASH-SuperUser/mktsim
+
+theme:
+  name: readthedocs
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            members_order: source
+            show_source: false
+            show_signature_annotations: true
+            separate_signature: true
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Simulators: algorithms.md
+  - OHLCV: ohlcv.md
+  - CLI: cli.md
+  - GUI: gui.md
+  - Examples: examples.md
+  - API overview: api.md
+  - Reference:
+      - Package: reference/package.md
+      - basic_interaday: reference/basic_interaday.md
+      - advanced_intraday: reference/advanced_intraday.md
+      - ohlcv: reference/ohlcv.md
+      - cli: reference/cli.md
+      - gui: reference/gui.md

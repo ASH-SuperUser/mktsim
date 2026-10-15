@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mktsim"
+version = "0.2.0"
+description = "Realistic intraday share-market simulators driven by simulated buy/sell order flow"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+keywords = ["simulation", "stock-market", "intraday", "ohlcv", "backtesting"]
+authors = [{ name = "ASH-SuperUser" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+gui = ["matplotlib>=3.6"]
+test = ["pytest>=7"]
+docs = ["mkdocs>=1.6", "mkdocstrings[python]>=1.0", "ruff"]
+dev = ["matplotlib>=3.6", "pytest>=7", "build", "twine", "mkdocs>=1.6", "mkdocstrings[python]>=1.0", "ruff"]
+
+[project.urls]
+Homepage = "https://github.com/ASH-SuperUser/mktsim"
+Documentation = "https://github.com/ASH-SuperUser/mktsim/tree/main/docs"
+Repository = "https://github.com/ASH-SuperUser/mktsim"
+Issues = "https://github.com/ASH-SuperUser/mktsim/issues"
+
+[project.scripts]
+mktsim = "mktsim.cli:main"
+mktsim-gui = "mktsim.gui:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["mktsim*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,3 @@
+# `mktsim.cli`
+
+::: mktsim.cli

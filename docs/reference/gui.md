@@ -1,0 +1,3 @@
+# `mktsim.gui`
+
+::: mktsim.gui
